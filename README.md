@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+* Hi. My name is Sarvenaz. I`m excited to be here! Let`s make history!
 	
 ## Technologies
 Technologies used for this project:
