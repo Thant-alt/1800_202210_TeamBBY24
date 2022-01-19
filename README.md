@@ -6,10 +6,9 @@
 
 ## General Info
 This browser based web application to ...
-* Hi my name is Vivian. I am excited for this project because I think it would be fun.
-	
+* Hi my name is Thant. I am excited for this project because I think it would be fun.	
 * Hi. My name is Sarvenaz. I`m excited to be here! Let`s make history!
-* Hi my name is Vivian. I am excited for this project because I think it would be fun.
+
 - Hi my name is Tushar and i am excited to this stuff.	
 -hi this is my secound line
 ## Technologies
