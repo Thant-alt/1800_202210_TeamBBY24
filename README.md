@@ -6,7 +6,7 @@
 
 ## General Info
 This browser based web application to ...
--Hi my name is Vivian. I am excited for this project because I think it would be fun.
+* Hi my name is Vivian. I am excited for this project because I think it would be fun.
 	
 ## Technologies
 Technologies used for this project:
