@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## My Web Application (Translation App)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -12,6 +12,7 @@ This browser based web application to ...
 
 - Hi my name is Tushar and i am excited to this stuff.	
 -hi this is my secound line
+* Hi my name is Chi Lan. Please push successfully.
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
