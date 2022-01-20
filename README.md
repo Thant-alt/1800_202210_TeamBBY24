@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## My Web Application (Translation App)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
