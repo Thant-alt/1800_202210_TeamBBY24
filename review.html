@@ -15,8 +15,8 @@
 
     <!-- Boostrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -49,27 +49,28 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit" style="color: rgb(3, 3, 2);">Search</button>
         </form>
-        <br><br>
-        <div class="d-grid gap-2 d-sm-flex  justify-content-sm-center">
-            <button type="button" class="btn btn-danger btn-lg btn-block" style="width: 20%;">Peer Reviews Feed</button>
-            
+        <div class="container">
+            <h1>Some popular Restaurants</h1>
+            <!-- Here is container for cards  -->
+            <div class="container">
+                <div id="reviews-go-here" class="row row-cols-auto">
+                </div>
+            </div>
         </div>
-        <br>
-        <h1 class="display-5 fw-bold">All roads end in the Kitchen</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">If you are foodie you will enjoy hanging out with us.</p>
-            <br><br>
+        <!-- Templates for general use, not displayed -->
+        <template id="reviewCardTemplate">
+            <div class="card py-2 mx-2" style="width: 18rem;">
+                <img class="card-image card-img-top" src=" ..." alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a class="btn btn-primary card-href">Get Details</a>
+                </div>
+            </div>
+        </template>
 
-            <div class="d-grid gap-2 d-sm-flex  justify-content-sm-center">
-                <button type="button" class="btn btn-danger btn-lg btn-block" style="width: 80%;">Order Now</button>
-                
-            </div>
-            <br><br>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-primary btn-lg btn-block" style="width: 20%;">Login</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block" style="width: 20%;">Sign Up</button>
-            </div>
-        </div>
+
     </div>
 
     <!-- copyright footer -->
@@ -78,12 +79,13 @@
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/main.js"></script>
     <!---------------------------------------------->
     <!-- Link to API keys go here -->
-    <script src="./scripts/firebaseAPI_BBY24.js"></script> 
+    <script src="./scripts/firebaseAPI_BBY24.js"></script>
 
     <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="./scripts/script.js"></script>
 
 </body>
 
