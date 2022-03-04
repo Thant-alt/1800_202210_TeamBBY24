@@ -21,12 +21,12 @@
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
     <!-- Other libraries go here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,34 +44,130 @@
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
+    
+
     <div class="px-4 py-5 my-5 text-center">
         <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control me-2" type="search" placeholder="Search Restaurant" aria-label="Search">
             <button class="btn btn-outline-success" type="submit" style="color: rgb(3, 3, 2);">Search</button>
         </form>
-        <div class="container">
-            <h1>Some popular Restaurants</h1>
-            <!-- Here is container for cards  -->
-            <div class="container">
-                <div id="reviews-go-here" class="row row-cols-auto">
-                </div>
+        
+
+        <br>
+
+        
+        <div class="card-group">
+        <div class="card" style="width: 18rem;">
+            <img src="./images/restaurant1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Kitchen Craft Eatery</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
-        </div>
-        <!-- Templates for general use, not displayed -->
-        <template id="reviewCardTemplate">
-            <div class="card py-2 mx-2" style="width: 18rem;">
-                <img class="card-image card-img-top" src=" ..." alt="...">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Reviews</li>
+              <li class="list-group-item">Rate this restaurant</li>
+              <li class="list-group-item">Order Now</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="menuk">Menu</a>
+              <a href="#" class="contact-info">ContactInfo</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./images/restaurant2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Chambar Restaurant</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Reviews</li>
+              <li class="list-group-item">Rate this restaurant</li>
+              <li class="list-group-item">Order Now</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="menuk">Menu</a>
+              <a href="#" class="contact-info">ContactInfo</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img src="./images/restaurant3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Gotham Steak House</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Reviews</li>
+              <li class="list-group-item">Rate this restaurant</li>
+              <li class="list-group-item">Order Now</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="menuk">Menu</a>
+              <a href="#" class="contact-info">ContactInfo</a>
+            </div>
+          </div>
+
+          </div>
+          <br>
+
+          <div class="card-group">
+            <div class="card" style="width: 18rem;">
+                <img src="./images/restaurant4.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a class="btn btn-primary card-href">Get Details</a>
+                  <h5 class="card-title">Burgoo Restaurant</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
-            </div>
-        </template>
-
-
-    </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Reviews</li>
+                  <li class="list-group-item">Rate this restaurant</li>
+                  <li class="list-group-item">Order Now</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="menuk">Menu</a>
+                  <a href="#" class="contact-info">ContactInfo</a>
+                </div>
+              </div>
+    
+              <div class="card" style="width: 18rem;">
+                <img src="./images/restaurant5.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Le Crocodile Restaurant</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Reviews</li>
+                  <li class="list-group-item">Rate this restaurant</li>
+                  <li class="list-group-item">Order Now</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="menuk">Menu</a>
+                  <a href="#" class="contact-info">ContactInfo</a>
+                </div>
+              </div>
+    
+              <div class="card" style="width: 18rem;">
+                <img src="./images/restaurant6.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Dry Pot Restaurant</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Reviews</li>
+                  <li class="list-group-item">Rate this restaurant</li>
+                  <li class="list-group-item">Order Now</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="menuk">Menu</a>
+                  <a href="#" class="contact-info">ContactInfo</a>
+                </div>
+              </div>
+    
+              </div>
+              
+       
+        
+   
 
     <!-- copyright footer -->
     <nav id="footerPlaceholder"></nav>
