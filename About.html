@@ -2,92 +2,97 @@
 <html lang="en">
 
 <head>
-    <title>BCIT Project 1800_202210_TeamBBY24</title>
-    <meta name="comp1800 template" content="My 1800 App">
+  <title>BCIT Project 1800_202210_TeamBBY24</title>
+  <meta name="comp1800 template" content="My 1800 App">
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap Library CSS CDN go here -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- Boostrap Library JS CDN  go here -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-- Other libraries go here -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Other libraries go here -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Link to styles of your own -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
 <body>
 
-    <!-- our own navbar goes here -->
-    <nav id="navbarPlaceholder"></nav>
+  <!-- our own navbar goes here -->
+  <nav id="navbarPlaceholder"></nav>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <div id="Food">
-        <img src="./images/fusion.png" alt="Food Fusion" height= "500"width="100%>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <div id="Food">
+    <img src="./images/fusion.png" alt="Food Fusion" height="500" width="100% >
       </div>
-      <div class="card-group">
-        <div class="card">
-          
-          <div class="card-body">
-            <h5 class="card-title">About Us</h5>
-            <p class="card-text">We bring FOOD FUSION for foodies from different countries to help them avoid the unfamiliar food tastes with the food reviews from peers of the same nationality, unlike ordinary food ordering applications</p>
-            <p class="card-text"><small class="text-muted">We are here to Serve You.</small>
-          </div>
-        </div>
-        <div class="card">
-          
-          <div class="card-body">
-            <h5 class="card-title">Trust & Safety</h5>
-            <p class="card-text">Our community is built on trust. Whether you’re a consumer or a business owner, you put your trust in us to provide information people can rely on to make good decisions. We work hard to maintain that trust.</p>
-            <p class="card-text"><small class="text-muted">Earning your trust. Always.</small></p>
-          </div>
-        </div>
-        <div class="card">
-        
-          <div class="card-body">
-            <h5 class="card-title">Contact us</h5>
-            <p class="card-text"> If You have any complaint or have any inquiry, please Contact us at our Email <a href=>food.fusion@meta.ca</a> or contact us at <a href=>xxxxxxxxxxx.</a></p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
+      <div class=" card-group">
+    <div class="card">
+
+      <div class="card-body">
+        <h5 class="card-title">About Us</h5>
+        <p class="card-text">We bring FOOD FUSION for foodies from different countries to help them avoid the unfamiliar
+          food tastes with the food reviews from peers of the same nationality, unlike ordinary food ordering
+          applications</p>
+        <p class="card-text"><small class="text-muted">We are here to Serve You.</small>
       </div>
+    </div>
+    <div class="card">
+
+      <div class="card-body">
+        <h5 class="card-title">Trust & Safety</h5>
+        <p class="card-text">Our community is built on trust. Whether you’re a consumer or a business owner, you put
+          your trust in us to provide information people can rely on to make good decisions. We work hard to maintain
+          that trust.</p>
+        <p class="card-text"><small class="text-muted">Earning your trust. Always.</small></p>
+      </div>
+    </div>
+    <div class="card">
+
+      <div class="card-body">
+        <h5 class="card-title">Contact us</h5>
+        <p class="card-text"> If You have any complaint or have any inquiry, please Contact us at our Email <a
+            href=>food.fusion@meta.ca</a> or contact us at <a href=>xxxxxxxxxxx.</a></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
 
 
-    <!-- copyright footer -->
-    <nav id="footerPlaceholder"></nav>
+  <!-- copyright footer -->
+  <nav id="footerPlaceholder"></nav>
 
-    <!-- Link to API keys go here -->
-    <script src="./scripts/firebaseAPI_BBY24.js"></script> 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <script src="./scripts/skeleton.js"></script>
-    <!---------------------------------------------->
+  <!-- Link to API keys go here -->
+  <script src="./scripts/firebaseAPI_BBY24.js"></script>
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <script src="./scripts/skeleton.js"></script>
+  <!---------------------------------------------->
 
 
-    <!-- Link to scripts of your own -->
-    <script src="./scripts/script.js"></script>
-     
+  <!-- Link to scripts of your own -->
+  <script src="./scripts/script.js"></script>
+
 
 </body>
 

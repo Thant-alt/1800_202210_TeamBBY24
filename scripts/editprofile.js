@@ -13,7 +13,7 @@ function populateInfo() {
                     var userBirthday = userDoc.data().birthDay;
                     var userEmail = userDoc.data().email;
                     var userGender = userDoc.data().gender;
-                    var userRegion = userDoc.data().region;
+                    var userCountry = userDoc.data().country;
                     var userPhoneNumber = userDoc.data().phoneNumber;
                     
 
@@ -27,14 +27,14 @@ function populateInfo() {
                     if (userEmail != null) {
                         document.getElementById("cityInput").value = userEmail;
                     }
-                    if (userRegion != null) {
-                        document.getElementById("cityInput").value = userRegion;
+                    if (userCountry != null) {
+                        document.getElementById("countryInput").value = userCountry;
                     }
                     if (userGender != null) {
-                        document.getElementById("cityInput").value = userGender;
+                        document.getElementById("genderInput").value = userGender;
                     }
                     if (userPhoneNumber != null) {
-                        document.getElementById("cityInput").value = userPhoneNumber;
+                        document.getElementById("phoneNumberInput").value = userPhoneNumber;
                     }
                 })
         } else {
@@ -58,7 +58,7 @@ function editUserInfo() {
     userName = document.getElementById('nameInput').value;       
     userBirthday = document.getElementById('birthdayInput').value;     
     userEmail = document.getElementById('emailInput').value;
-    userRegion = document.getElementById('regionInput').value;
+    userCountry = document.getElementById('countryInput').value;
     userGender = document.getElementById('genderInput').value;
     userPhoneNumber = document.getElementById('phoneNumberInput').value;
 
@@ -74,7 +74,7 @@ function editUserInfo() {
                 name: userName,
                 birthDay: userBirthday,
                 email: userEmail,
-                region: userRegion,
+                country: userCountry,
                 gender: userGender,
                 phoneNumber: userPhoneNumber
             })
