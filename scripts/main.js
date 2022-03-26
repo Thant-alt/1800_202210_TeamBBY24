@@ -1,5 +1,3 @@
-
-
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
      if (user) {
@@ -30,12 +28,13 @@ function writePosts() {
      postsRef.add({
           code: "BBY01",
           postOwner: "Vivian",
-          country: "Japan",
+          country: "Arab",
           name: "Kitchen Craft Eatery",
           city: "Burnaby",
           openingHour: "9:00 am",
           closingHour: "9:00 pm",
-          details: "Vivian goes here regularly"
+          details: "Vivian goes here regularly",
+          last_updated: firebase.firestore.FieldValue.serverTimestamp()
 
      });
 
@@ -47,8 +46,8 @@ function writePosts() {
           city: "Downtown Vancouver",
           openingHour: "10:00 am",
           closingHour: "9:00 pm",
-          details: "Naz goes here regularly"
-
+          details: "Naz goes here regularly",
+          last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 10, 2022"))
      });
 
      postsRef.add({
@@ -59,8 +58,8 @@ function writePosts() {
           city: "New Westmister",
           openingHour: "10:00 am",
           closingHour: "9:00 pm",
-          details: "Chilan goes here regularly"
-
+          details: "Chilan goes here regularly",
+          last_updated: firebase.firestore.Timestamp.fromDate(new Date("January 1, 2022"))
      });
 }
 
@@ -68,7 +67,10 @@ function populateCardsDynamically() {
      let cardTemplate = document.getElementById("postCardTemplate");
      let postCardTemplate = document.getElementById("postCardGroup");
 
-     db.collection("posts").get()
+     db.collection("posts")
+          .orderBy("country")
+          .limit(10)
+          .get()
           .then(snap => {
                var i = 1;
                snap.forEach(doc => {
@@ -139,5 +141,6 @@ function saveBookmark(postID) {
      });
 
 }
+
 
 
