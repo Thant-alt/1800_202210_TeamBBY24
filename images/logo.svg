@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2348" viewBox="0 0 248.75 472.18">
+  <g id="g2358">
+    <path id="path2360" d="m115.16 154.04c0 15.34-13.97 31.75-32.086 31.75v258.84c0 36.74-50.081 36.74-50.081 0v-258.84c-17.64 0-32.993-13.58-32.993-33.93v-142.44c0-12.4 17.92-12.879 17.92 0.478v105.3h15v-106.26c0-11.396 17.25-12.128 17.25 0.479v105.78h15.5v-106.14c0-11.894 16.75-12.373 16.75 0.484v105.66h15.25v-106.14c0-11.769 17.5-12.248 17.5 0.484l-0.01 144.5z"/>
+    <path id="path2362" d="m248.75 42.524v401.98c0 35.93-50.18 35.4-50.18 0v-159.49h-26.72v-242.49c0-56.441 76.9-56.441 76.9 0.004z"/>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>aiga restaurant</dc:title>
+        <dc:date>2009-05-02T19:18:28</dc:date>
+        <dc:description>Set of international airport symbols.&#xD;\n&#xD;\nSource: http://www.aiga.org/content.cfm/symbol-signs&#xD;\n&#xD;\nConverted to SVG by Jean-Victor Balin.</dc:description>
+        <dc:source>http://openclipart.org/detail/25719/aiga-restaurant-by-anonymous-25719</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Anonymous</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>aiga</rdf:li>
+            <rdf:li>aiga no bg</rdf:li>
+            <rdf:li>black and white</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>externalsource</rdf:li>
+            <rdf:li>fork</rdf:li>
+            <rdf:li>image</rdf:li>
+            <rdf:li>knife</rdf:li>
+            <rdf:li>map symbol</rdf:li>
+            <rdf:li>media</rdf:li>
+            <rdf:li>png</rdf:li>
+            <rdf:li>public domain</rdf:li>
+            <rdf:li>restaurant</rdf:li>
+            <rdf:li>sign</rdf:li>
+            <rdf:li>silhouette</rdf:li>
+            <rdf:li>svg</rdf:li>
+            <rdf:li>symbol</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
