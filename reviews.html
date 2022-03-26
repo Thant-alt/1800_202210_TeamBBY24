@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+    <title>BCIT Project 1800_202210_TeamBBY24</title>
+    <meta name="comp1800 template" content="My 1800 App">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Boostrap Library JS CDN  go here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <!-- Other libraries go here -->
+
+    <!-- Link to styles of your own -->
+
+
+
+    <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+
+<body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+
+    <!-- our own navbar goes here -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <div class="container">
+        <h2 class="text-center">Reviews</h2>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="/images/profile1.jpeg" class="img img-rounded img-fluid" />
+                        <p class="text-secondary text-center">Myanmar</p>
+                    </div>
+                    <div class="col-md-10">
+                        <p>
+                            <a class="float-left" href=#><strong>Thant Yati</strong></a>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                        </p>
+                        <div class="clearfix"></div>
+                        <p>Volutpat est velit egestas dui id ornare arcu odio ut. Sit amet justo donec enim diam
+                            vulputate ut. Elit eget gravida cum sociis natoque.</p>
+                        <p>
+                            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="/images/profile6.jpeg" class="img img-rounded img-fluid" />
+                        <p class="text-secondary text-center">Iran</p>
+                    </div>
+                    <div class="col-md-10">
+                        <p>
+                            <a class="float-left" href=#><strong>Sarvenaz</strong></a>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                        </p>
+                        <div class="clearfix"></div>
+                        <p>Amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Nunc vel risus
+                            commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p>
+                            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="/images/profile8.jpeg" class="img img-rounded img-fluid" />
+                        <p class="text-secondary text-center">India</p>
+                    </div>
+                    <div class="col-md-10">
+                        <p>
+                            <a class="float-left" href=#><strong>Tursha</strong></a>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                        </p>
+                        <div class="clearfix"></div>
+                        <p>Sit amet purus gravida quis blandit turpis cursus in hac. Elementum nisi quis eleifend quam
+                            adipiscing vitae proin.</p>
+                        <p>
+                            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="/images/profile4.jpeg" class="img img-rounded img-fluid" />
+                        <p class="text-secondary text-center">Vietnam</p>
+                    </div>
+                    <div class="col-md-10">
+                        <p>
+                            <a class="float-left" href=#><strong>Chi Lan</strong></a>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+
+                        </p>
+                        <div class="clearfix"></div>
+                        <p>Id aliquet risus feugiat in ante metus dictum. Vitae suscipit tellus mauris a diam maecenas
+                            sed. </p>
+                        <p>
+                            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- copyright footer -->
+    <nav id="footerPlaceholder"></nav>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <script src="./scripts/skeleton.js"></script>
+    <!---------------------------------------------->
+    <!-- Link to API keys go here -->
+    <script src="./scripts/firebaseAPI_BBY24.js"></script>
+
+    <!-- Link to scripts of your own -->
+    <script src="./scripts/reviews.js"></script>
+
+</body>
+
+</html>
