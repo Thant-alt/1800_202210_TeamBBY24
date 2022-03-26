@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BCIT Project 1800_202210_TeamBBY24</title>
+  <meta name="comp1800 template" content="My 1800 App">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --> -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+  <!-- Other libraries go here -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <!-- Link to styles of your own -->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+
+<body>
+
+  <!-- navbar header -->
+  <nav id="navbarPlaceholder"></nav>
+
+  <div class="container">
+    <!-- Content here -->
+    <div> 
+        <label> Add New Restaurant </label>
+        <br>
+        <input id="type" type="text">
+        <br>
+        <label> Add Food Type </label>
+        <br>
+        <input id="type" type="text">
+        <br>
+        <input type="file" id="image_input" accept="image/jpg">
+        <div id="post_image" style="width: 250px; height: 250px; border: 1px solid black;"></div>
+    </div>
+    <div class="dropdown">
+        <br>
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Level of Food Taste
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><button class="dropdown-item" type="button">Perfect</button></li>
+            <li><button class="dropdown-item" type="button">Good</button></li>
+            <li><button class="dropdown-item" type="button">Bad</button></li>
+        </ul>
+        <br><br>
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Level of Packaging and Cleanliness
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><button class="dropdown-item" type="button">Perfect</button></li>
+            <li><button class="dropdown-item" type="button">Good</button></li>
+            <li><button class="dropdown-item" type="button">Bad</button></li>
+        </ul>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="comment">Comments:</label>
+        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-info" for="btnradio1">Customer Service</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio2">Good</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio3">Not Satisfied</label>
+    </div>
+    <br><br>
+    <div id="group">
+        <label style="width: 100px;">Price</label>
+        <input type="radio" value="val1" name="mud">
+        <label style="width: 100px;">Expensive</label>
+        <input type="radio" value="val2" name="mud">
+        <label style="width: 100px;">Affordable</label>
+    </div>
+
+
+    <div class="d-grid gap-2">
+        <button onclick="apple()" id="submit" class="btn btn-danger" type="button">Submit</button>
+    </div>
+
+  <!-- copyright footer -->
+  <nav id="footerPlaceholder"></nav>
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <script src="./scripts/firebaseAPI_BBY24.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/post.js"></script>
+  <!---------------------------------------------->
+  <!-- Link to API keys go here -->
+
+
+  <!-- Link to scripts of your own -->
+  <script src="./scripts/script.js"></script>
+
+
+</body>
+
+</html>
