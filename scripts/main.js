@@ -128,6 +128,7 @@ function addLikes(postID) {
 }
 
 function saveBookmark(postID) {
+     
      currentUser.set({
           bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
         
