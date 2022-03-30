@@ -13,7 +13,7 @@ function populateInfo() {
                     var userBirthday = userDoc.data().birthDay;
                     var userEmail = userDoc.data().email;
                     var userGender = userDoc.data().gender;
-                    var userCountry = userDoc.data().country;
+                    var userRegion = userDoc.data().region;
                     var userPhoneNumber = userDoc.data().phoneNumber;
                     
 
@@ -28,7 +28,7 @@ function populateInfo() {
                         document.getElementById("cityInput").value = userEmail; 
                     }
                     if (userCountry != null) {
-                        document.getElementById("countryInput").value = userCountry;
+                        document.getElementById("regionInput").value = userRegion;
                     }
                     if (userGender != null) {
                         document.getElementById("genderInput").value = userGender;
@@ -58,7 +58,7 @@ function editUserInfo() {
     userName = document.getElementById('nameInput').value;       
     userBirthday = document.getElementById('birthdayInput').value;     
     userEmail = document.getElementById('emailInput').value;
-    userCountry = document.getElementById('countryInput').value;
+    userRegion = document.getElementById('regionInput').value;
     userGender = document.getElementById('genderInput').value;
     userPhoneNumber = document.getElementById('phoneNumberInput').value;
 
@@ -74,7 +74,7 @@ function editUserInfo() {
                 name: userName,
                 birthDay: userBirthday,
                 email: userEmail,
-                country: userCountry,
+                region: userRegion,
                 gender: userGender,
                 phoneNumber: userPhoneNumber
             })
