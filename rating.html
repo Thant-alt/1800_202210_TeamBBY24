@@ -21,7 +21,7 @@
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -50,26 +50,36 @@
         <!-- Content here -->
         <p>Your Review</p>
         <label for="rating">Overall rating:</label>
-        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input
-                type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating"
-                value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
-                for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+        <div class="rating"> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> <input
+                type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating"
+                value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="4" id="4"><label
+                for="4">☆</label> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
         </div>
+
         <div class="mb-3 mt-3">
-            <label for="comment">Comments:</label>
-            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+            <label for="rest_comment">Comments:</label>
+            <textarea id="rest_comment" class="form-control" rows="5" id="comment" name="text"></textarea>
         </div>
-        <label>What did you eat?</label>
-        <br>
-        <input id="type" type="text">
+
+        <div class="p-2">
+            <label>What did you eat?</label>
+            <br>
+            <input id="food_type" type="text">
+        </div>
+
         <br>
         <br>
         <div class="d-grid gap-2">
-            <button onclick="writeData()" id="submit" class="btn btn-danger" type="button">Submit</button>
+            <a>
+                <button onclick="saveRating()" id="submit" class="btn btn-danger" type="button">Submit</button>
+            </a>
         </div>
+
         <br>
         <div class="d-grid gap-2">
-            <button onclick="apple()" id="cancel" class="btn btn-secondary" type="button">Cancel</button>
+            <a href="main.html">
+                <button onclick="" id="cancel" class="btn btn-secondary" type="button">Cancel</button>
+            </a>
         </div>
         <!-- copyright footer -->
         <nav id="footerPlaceholder"></nav>

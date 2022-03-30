@@ -95,13 +95,11 @@ body{
     color: #0062cc;
 }
 
-<<<<<<< HEAD
 #post_image{
     width: 250px;
     height: 250px;
     border: 1px solid black;
 }
-=======
 .rating {
     display: flex;
     flex-direction: row-reverse;
@@ -158,4 +156,3 @@ p {
         font-size: 12px
     }
 }
->>>>>>> 3409fc45d62ccf97bb39804fd90563e71474f3c5
