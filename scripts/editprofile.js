@@ -25,9 +25,9 @@ function populateInfo() {
                         document.getElementById("birthdayInput").value = userBirthday;
                     }
                     if (userEmail != null) {
-                        document.getElementById("cityInput").value = userEmail; 
+                        document.getElementById("emailInput").value = userEmail; 
                     }
-                    if (userCountry != null) {
+                    if (userRegion != null) {
                         document.getElementById("regionInput").value = userRegion;
                     }
                     if (userGender != null) {
