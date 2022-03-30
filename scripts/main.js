@@ -144,4 +144,21 @@ function saveBookmark(postID) {
 }
 
 
+function displaySearchValue() {
+     console.log(document.getElementById("mySearch"));
+     var x = document.getElementById("mySearch").ariaValueMax;
+     alert(x);
+}
+
+function searchSpecifically(x) {
+     let searchCard = document.getElementById("postCardTemplate");
+
+     db.collection("posts").where("name", "==", x).get().then(snapshot => {
+          
+               console.log("This is what you looked for.")
+          })
+          
+}
+
+
 
