@@ -1,7 +1,9 @@
 body{
      background: -webkit-linear-gradient(left, #bebebe, #ffffff); 
-    /* background:url("./images/background.jpeg"); */
-}
+     
+        /* background-image:url("../images/background.jpeg");*/
+        }
+
 .emp-profile{
     padding: 3%;
     margin-top: 3%;
@@ -136,7 +138,9 @@ body{
     opacity: 0.4
 }
 
-
+.text{
+    text-align: center;
+}
 
 
 h1 {
@@ -156,3 +160,4 @@ p {
         font-size: 12px
     }
 }
+

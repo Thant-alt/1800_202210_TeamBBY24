@@ -37,9 +37,6 @@
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
 
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
@@ -56,7 +53,7 @@
                     <label>Birthday</label>
                     <input type="date" id="birthdayInput" class="form-control"
                         placeholder="Enter your birthday (yyyy/mm/dd)">
-                        <form action="/action_page.php"></form>
+                    <form action="/action_page.php"></form>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
@@ -66,31 +63,24 @@
                     <label>Region</label>
                     <input type="text" id="regionInput" class="form-control" placeholder="Enter your country">
                 </div>
-
-
-                    <div class="form-group">
-                        <label>Gender</label>
-                        <input type="text" id="genderInput" class="form-control"
-                            placeholder="Enter your gender (male/female/other)">
-                    </div>
-
-                           <!-- <input type="radio" name="gender" value="male"> Male<br>
-                            <input type="radio" name="gender" value="female"> Female<br>
-                            <input type="radio" name="gender" value="other"> Other-->
-                            
-                    
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="text" id="phoneNumberInput" class="form-control" placeholder="Enter your phoneNumber">
-                    </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <input type="text" id="genderInput" class="form-control"
+                        placeholder="Enter your gender (male/female/other)">
                 </div>
-            </fieldset>
-            <div class="d-flex justify-content-end mt-5 px-5">
-                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
-                <span style="width: 10px"></span>
-                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
-            </div>
-        </form>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" id="phoneNumberInput" class="form-control" placeholder="Enter your phoneNumber">
+                </div>
+    </div>
+    </fieldset>
+    <div class="d-flex justify-content-end mt-5 px-5">
+        <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+        <span style="width: 10px"></span>
+        <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+    </div>
+    </form>
     </div>
 
     <!-- copyright footer -->
