@@ -11,7 +11,7 @@
 
 
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap Library CSS CDN go here -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -20,12 +20,12 @@
   <!-- Boostrap Library JS CDN  go here -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+    </script>
 
   <!-------------------------------------------------------->
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
   <!-------------------------------------------------------->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --> 
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -52,13 +52,14 @@
   <div class="px-4 py-5 my-5 text-center">
 
     <div class="searchBar">
-    <form class="d-flex flex-row">
-      <a href="post.html" class="btn btn-warning" role="button">Add Post</a>
-      
-      <input id="mySearch" class="form-control me-2" type="search" placeholder="Search Restaurant" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit" style="color: rgb(3, 3, 2);">Search</button>
-    
-    </form>
+      <form class="d-flex flex-row">
+        <a href="post.html" class="btn btn-warning" role="button">Add Post</a>
+
+        <input id="mySearch" class="form-control me-2" type="search" placeholder="Search Restaurant"
+          aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" style="color: rgb(3, 3, 2);">Search</button>
+
+      </form>
     </div>
 
   </div>
@@ -72,14 +73,9 @@
     </div>
 
     <!-- Templates for general use, not displayed -->
-    <div class="searchTitle">
     <template class="searchTitle" id="postCardTemplate">
       <div class="card py-2 mx-2" style="width: 23rem;">
-
         <div class="d-flex justify-content-between">
-
-
-
           <div class="d-flex flex-row ml-2">
             <img src="./images/profile1.jpeg" width="60" height="50" class="rounded-circle">
             <div class="d-flex flex-column">
@@ -88,12 +84,7 @@
             </div>
           </div>
           <div class="save-button"><i class="material-icons">bookmark_border</i></div>
-
         </div>
-
-
-
-
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -105,34 +96,33 @@
               <div class="likeCard"><i class="material-icons">favorite</i></div>
               <p><span class="scores-goes-here">12</span></p>
             </div>
-            <a href="rating.html" d-flex flex-row btn btn-primary card-href><span>Give Review</span> </a>
-            <a href="reviews.html" class="d-flex flex-row  btn btn-primary card-href"><span>2 comments</span> </a>
+            <a href="rating.html" d-flex flex-row btn btn-primary card-href><span>Give A Review</span> </a>
+            <a href="reviews.html" class="d-flex flex-row  btn btn-primary card-href"><span>See Reviews</span> </a>
           </div>
-
         </div>
       </div>
     </template>
+
     <div class="container">
       <div class="card-group" id="postCardGroup">
       </div>
     </div>
-  </div>
-</div>
-
-  <!-- copyright footer -->
-  <nav id="footerPlaceholder"></nav>
-
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <script src="./scripts/firebaseAPI_BBY24.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/main.js"></script>
-  <!---------------------------------------------->
-  <!-- Link to API keys go here -->
 
 
-  <!-- Link to scripts of your own -->
-  <script src="./scripts/script.js"></script>
+    <!-- copyright footer -->
+    <nav id="footerPlaceholder"></nav>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <script src="./scripts/firebaseAPI_BBY24.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/main.js"></script>
+    <!---------------------------------------------->
+    <!-- Link to API keys go here -->
+
+
+    <!-- Link to scripts of your own -->
+    <script src="./scripts/script.js"></script>
 
 
 </body>

@@ -3,23 +3,28 @@ function saveRating() {
     var restComment = document.getElementById('rest_comment').value;
 
     if ('input[id="1"]:checked') {
-        var starRating = document.querySelector("#1").value;
+        var starRating = document.getElementById('1').value;
+        console.log(starRating);
     } 
     
     if ('input[id="2"]:checked') {
-        var starRating = document.querySelector("#2").value;
+        var starRating = document.getElementById('2').value;
+        console.log(starRating);
     } 
 
     if ('input[id="3"]:checked') {
-        var starRating = document.querySelector("#3").value;
+        var starRating = document.getElementById('3').value;
+        console.log(starRating);
     } 
 
     if ('input[id="4"]:checked') {
-        var starRating = document.querySelector("#4").value;
+        var starRating = document.getElementById('4').value;
+        console.log(starRating);
     } 
     
-    if ('input[id="4"]:checked') {
-        var starRating = document.querySelector("#5").value;
+    if ('input[id="5"]:checked') {
+        var starRating = document.getElementById('5').value;
+        console.log(starRating);
     } 
 
     firebase.auth().onAuthStateChanged(user => {
