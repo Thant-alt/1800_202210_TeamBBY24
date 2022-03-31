@@ -1,11 +1,16 @@
 var currentUser;
+var currentUserRegion;
 firebase.auth().onAuthStateChanged(user => {
      if (user) {
+          console.log(user.uid);
           currentUser = db.collection("users").doc(user.uid);
-          console.log(currentUser);
-
           insertName();
-          populateCardsDynamically(user);
+          currentUser.get().then(function (doc) {
+               console.log(doc.data());
+               currentUserRegion = doc.data().region;
+               console.log(currentUserRegion);
+               populateCards("country", "==", currentUserRegion);
+          })
      } else {
           console.log("No user is singned in");
           window.location.href = "login.html";
@@ -41,8 +46,8 @@ function writePosts() {
      postsRef.add({
           code: "BBY02",
           postOwner: "Naz",
-          country: "India",
-          name: "Chamber Restaurant",
+          country: "Iran",
+          name: "Lord of the Wings",
           city: "Downtown Vancouver",
           openingHour: "10:00 am",
           closingHour: "9:00 pm",
@@ -63,57 +68,69 @@ function writePosts() {
      });
 }
 
-function populateCardsDynamically(user) {
-
-     db.collection("users").doc(user.uid).get()
-          .then(userDoc => {
-               var region = userDoc.data().region;
-               console.log(region);
 
 
-               var cardTemplate = document.getElementById("postCardTemplate");
-               var postCardTemplate = document.getElementById("postCardGroup");
-
-               db.collection("posts")
-                    .where("country", "==", region)
-                    .orderBy("name")
-                    .limit(10)
-                    .get()
-                    .then(snap => {
-                         var i = 1;
-                         snap.forEach(doc => {
-                              var postID = doc.data().code;
-                              var title = doc.data().name;
-                              var postScore = doc.data().scores;
-                              var details = doc.data().details;
-
-                              var postOwner = doc.data().postOwner;
-                              var country = doc.data().country;
-
-                              let testPostCard = cardTemplate.content.cloneNode(true);
-
-                              //update title and text and image
-                              testPostCard.querySelector('.card-title').innerHTML = title;
-                              testPostCard.querySelector('.card-text').innerHTML = details;
-                              testPostCard.querySelector('.card-owner').innerHTML = postOwner;
-                              testPostCard.querySelector('.card-country').innerHTML = country;
-                              //this line sets the id attribute for the <i> tag in the format of "save-postID" 
-                              //so later we know which hike to bookmark based on which post was clicked
-                              testPostCard.querySelector('.save-button').id = 'save-' + postID;
-                              // this line will call a function to save the hikes to the user's document             
-                              testPostCard.querySelector('.save-button').onclick = () => saveBookmark(postID);
-                              //this is the line added so that it makes the icon clickable and call another function
-                              testPostCard.querySelector('.likeCard').onclick = () => addLikes(postID);
-                              testPostCard.querySelector(".scores-goes-here").innerHTML = postScore;
-                              testPostCard.querySelector('.card-image').src = `./images/${postID}.jpg`;
-
-                              postCardGroup.appendChild(testPostCard);
-                         })
-                    })
-
+function populateCards(key, operation, value) {
+     console.log(key);
+     console.log(value);
+     var cardTemplate = document.getElementById("postCardTemplate");
+     var postCardGroup = document.getElementById("postCardGroup");
+     while (postCardTemplate.firstChild) {
+     postCardTemplate.removeChild(postCardTemplate.firstChild)
+     }
+     db.collection("posts")
+          .where(key, operation, value)
+          .orderBy("name")
+          .limit(10)
+          .get()
+          .then(snap => {
+               var i = 1;
+               snap.forEach(doc => {
+                    console.log(doc.data());
+                    createOneCard(doc, cardTemplate, postCardGroup)
+               })
           })
 }
-//populateCardsDynamically()
+
+function createOneCard(doc, cardTemplate, cardDiv) {
+
+     
+     console.log(doc.data());
+     var postID = doc.data().code;
+     var title = doc.data().name;
+     var postScore = doc.data().scores;
+     var details = doc.data().details;
+     var postOwner = doc.data().postOwner;
+     var country = doc.data().country;
+     let testPostCard = cardTemplate.content.cloneNode(true);
+     //update title and text and image
+     testPostCard.querySelector('.card-title').innerHTML = title;
+     testPostCard.querySelector('.card-text').innerHTML = details;
+     testPostCard.querySelector('.card-owner').innerHTML = postOwner;
+     testPostCard.querySelector('.card-country').innerHTML = country;
+     // //this line sets the id attribute for the <i> tag in the format of "save-postID" 
+     // //so later we know which hike to bookmark based on which post was clicked
+     testPostCard.querySelector('.save-button').id = 'save-' + postID;
+     // // this line will call a function to save the hikes to the user's document             
+     testPostCard.querySelector('.save-button').onclick = () => saveBookmark(postID);
+     // //this is the line added so that it makes the icon clickable and call another function
+     testPostCard.querySelector('.likeCard').onclick = () => addLikes(postID);
+     testPostCard.querySelector(".scores-goes-here").innerHTML = postScore;
+     testPostCard.querySelector('.card-image').src = `./images/${postID}.jpg`;
+     cardDiv.appendChild(testPostCard);
+}
+
+
+function displayBySearch() {
+     value = document.getElementById("searchvalue").value;
+     alert("search clicked " + value);
+     if (value) {
+          console.log(value);
+          populateCards("name", "==", value);
+     }else
+          populateCards("name", "!=", value);
+}
+
 
 function addLikes(postID) {
      console.log("inside");
@@ -140,11 +157,11 @@ function addLikes(postID) {
 function saveBookmark(postID) {
 
      currentUser.set({
-          bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
+               bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
 
-     }, {
-          merge: true
-     })
+          }, {
+               merge: true
+          })
           .then(function () {
                console.log("Post is saved for: " + currentUser);
                var iconID = 'save-' + postID;
@@ -152,7 +169,3 @@ function saveBookmark(postID) {
           });
 
 }
-
-
-
-

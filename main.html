@@ -52,6 +52,7 @@
   <div class="px-4 py-5 my-5 text-center">
 
     <div class="searchBar">
+<<<<<<< HEAD
       <form class="d-flex flex-row">
         <a href="post.html" class="btn btn-warning" role="button">Add Post</a>
 
@@ -60,12 +61,21 @@
         <button class="btn btn-outline-success" type="submit" style="color: rgb(3, 3, 2);">Search</button>
 
       </form>
+=======
+    <form class="d-flex flex-row">
+      <a href="post.html" class="btn btn-warning" role="button">Add Post</a>
+      
+      <input id="searchvalue" class="form-control me-2" type="search" placeholder="Search Restaurant" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit"  style="color: rgb(3, 3, 2);" onclick= "displayBySearch()">Search</button>
+    
+    </form>
+>>>>>>> 47128ed (Removed the region error)
     </div>
 
   </div>
 
   <div class="container">
-    <h1 class="text-center">Let's see what our people from your country are eating!</h1>
+    
     <!-- Here is container for cards  -->
     <div class="container">
       <div id="posts-go-here" class="row row-cols-auto">
@@ -104,6 +114,7 @@
     </template>
 
     <div class="container">
+      <h1 class="text-center">Let's see what our people from your country are eating!</h1>
       <div class="card-group" id="postCardGroup">
       </div>
     </div>
