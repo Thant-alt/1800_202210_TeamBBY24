@@ -55,8 +55,8 @@
     <form class="d-flex flex-row">
       <a href="post.html" class="btn btn-warning" role="button">Add Post</a>
       
-      <input id="mySearch" class="form-control me-2" type="search" placeholder="Search Restaurant" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit" style="color: rgb(3, 3, 2);">Search</button>
+      <input id="searchvalue" class="form-control me-2" type="search" placeholder="Search Restaurant" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit"  style="color: rgb(3, 3, 2);" onclick= "displayBySearch()">Search</button>
     
     </form>
     </div>
@@ -64,7 +64,7 @@
   </div>
 
   <div class="container">
-    <h1 class="text-center">Let's see what our people from your country are eating!</h1>
+    
     <!-- Here is container for cards  -->
     <div class="container">
       <div id="posts-go-here" class="row row-cols-auto">
@@ -113,6 +113,7 @@
       </div>
     </template>
     <div class="container">
+      <h1 class="text-center">Let's see what our people from your country are eating!</h1>
       <div class="card-group" id="postCardGroup">
       </div>
     </div>
