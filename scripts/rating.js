@@ -1,32 +1,13 @@
 function saveRating() {
     var foodType = document.getElementById('food_type').value;
     var restComment = document.getElementById('rest_comment').value;
-
-    if ('input[id="1"]:checked') {
-        var starRating = document.getElementById('1').value;
-        console.log(starRating);
-    } 
-    
-    if ('input[id="2"]:checked') {
-        var starRating = document.getElementById('2').value;
-        console.log(starRating);
-    } 
-
-    if ('input[id="3"]:checked') {
-        var starRating = document.getElementById('3').value;
-        console.log(starRating);
-    } 
-
-    if ('input[id="4"]:checked') {
-        var starRating = document.getElementById('4').value;
-        console.log(starRating);
-    } 
-    
-    if ('input[id="5"]:checked') {
-        var starRating = document.getElementById('5').value;
-        console.log(starRating);
-    } 
-
+    var rate = document.getElementsByName("rating");
+    var starRating;
+    for (var i = 0; i < rate.length; i++) {
+        if (rate[i].checked) {
+            starRating = rate[i].value;
+        }
+    }
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
         if (user) {
