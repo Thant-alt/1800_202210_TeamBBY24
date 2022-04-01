@@ -1,19 +1,20 @@
 let postID = localStorage.getItem("postID");
-
+console.log(postID);
 db.collection("posts").where("code", "==", postID)
     .get()
-    .then(queryRestaurant => {
+    .then(queryPost => {
         //see how many results you have got from the query
-        size = queryRestaurant.size;
+        size = queryPost.size;
         // get the documents of query
-        Restaurants = queryRestaurant.docs;
+        posts = queryPost.docs;
 
-        // We want to have one document per hike, so if the the result of 
+        // We want to have one document per post, so if the the result of 
         //the query is more than one, we can check it right now and clean the DB if needed.
-        if (size = 1) {
-            var thisRestaurant = Restaurants[0].data();
-            title = thisRestaurant.name;
-            document.getElementById("RestName").innerHTML = title;
+        console.log();
+        if (size == 1) {
+            var thisPost = posts[0].data();
+            var name = thisPost.name;
+            document.getElementById("RestName").innerHTML = name;
         } else {
             console.log("Query has more than one data")
         }
