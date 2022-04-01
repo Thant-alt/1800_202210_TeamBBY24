@@ -76,7 +76,7 @@ function populateCards(key, operation, value) {
      var cardTemplate = document.getElementById("postCardTemplate");
      var postCardGroup = document.getElementById("postCardGroup");
      while (postCardTemplate.firstChild) {
-     postCardTemplate.removeChild(postCardTemplate.firstChild)
+          postCardTemplate.removeChild(postCardTemplate.firstChild)
      }
      db.collection("posts")
           .where(key, operation, value)
@@ -90,11 +90,12 @@ function populateCards(key, operation, value) {
                     createOneCard(doc, cardTemplate, postCardGroup)
                })
           })
+     testHikeCard.querySelector('.read-more').href = "rating.html?restName=" + restName + "&id=" + restID;
 }
 
 function createOneCard(doc, cardTemplate, cardDiv) {
 
-     
+
      console.log(doc.data());
      var postID = doc.data().code;
      var title = doc.data().name;
@@ -127,7 +128,7 @@ function displayBySearch() {
      if (value) {
           console.log(value);
           populateCards("name", "==", value);
-     }else
+     } else
           populateCards("name", "!=", value);
 }
 
@@ -157,11 +158,11 @@ function addLikes(postID) {
 function saveBookmark(postID) {
 
      currentUser.set({
-               bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
+          bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
 
-          }, {
-               merge: true
-          })
+     }, {
+          merge: true
+     })
           .then(function () {
                console.log("Post is saved for: " + currentUser);
                var iconID = 'save-' + postID;
