@@ -1,0 +1,16 @@
+:root {
+    --green: rgb(147, 240, 119);
+    --dark-blue: #003566;
+    --white: #fff;
+    --black: #000000;
+  }
+
+.btn-space {
+    margin-right: 70px;
+}
+.nav-item .btn {
+    width: 70%;
+    font-weight: bold;
+    border: none;
+    color: var(--black);
+}

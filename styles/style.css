@@ -1,5 +1,13 @@
+:root {
+    --green: rgb(147, 240, 119);
+    --dark-blue: #003566;
+    --white: #fff;
+    --black: #000000;
+  }
+
+
 body {
-    background: -webkit-linear-gradient(left, #bebebe, #ffffff);
+    background: -webkit-linear-gradient(left, #bebebe, var(--white));
     width: 100%;
     height: 100%;
     margin: 0;
@@ -13,7 +21,7 @@ body {
     background-size: cover;
     background-attachment: scroll;
     background-repeat: no-repeat;
-    background-image: url(../images/background.jpeg);
+    background-color: var(--white);
 }
 
 .container1 {
@@ -27,6 +35,7 @@ body {
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-image: url(../images/background.jpeg);
+
 }
 
 .text {
@@ -34,7 +43,7 @@ body {
 }
 
 .container {
-    color: #a9a9a9;
+    color: var(--black);
 }
 
 .emp-profile {
@@ -42,7 +51,7 @@ body {
     margin-top: 3%;
     margin-bottom: 3%;
     border-radius: 0.5rem;
-    background: #fff;
+    background: var(--white);
 }
 
 .profile-img {
@@ -151,7 +160,7 @@ body {
 #post_image {
     width: 250px;
     height: 250px;
-    border: 1px solid black;
+    border: 1px solid var(--black);
 }
 
 .rating {
@@ -201,6 +210,18 @@ h1 {
 
 p {
     font-size: 1.2rem
+}
+
+.searchBar .addbutton {
+    background-color:  var(--dark-blue);
+    width: 20%;
+    border: none;
+    color: var(--white);
+}
+
+.cmt .btn {
+    background-color:  var(--dark-blue);
+    
 }
 
 @media only screen and (max-width: 600px) {
