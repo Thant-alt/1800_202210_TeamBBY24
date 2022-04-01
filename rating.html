@@ -44,49 +44,44 @@
     <!-- our own navbar goes here -->
     <div class="container1 bg">
 
-    <nav id="navbarPlaceholder"></nav>
-    <!-- Content here -->
-    <!-- Restaurant Review -->
-    <br>
-    <h1>Your Review for <span id="RestName"></span></h1>
-    <br>
-    <form>
-        <div class="form-group">
-            <label for="rating">Overall Rating:</label>
-            <div class="rating">
-                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+        <nav id="navbarPlaceholder"></nav>
+        <!-- Content here -->
+        <!-- Restaurant Review -->
+        <br>
+        <form class="container">
+            <h1 style="color: white">Your Review for <span id="RestName"></span></h1>
+            <br>
+            <div class="form-group">
+                <label for="rating" style="color: white">Overall Rating:</label>
+                <div class="rating">
+                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="mb-3 mt-3">
-            <label for="rest_comment">Comments:</label>
-            <textarea id="rest_comment" class="form-control" rows="5" id="comment" name="text"></textarea>
-        </div>
-        <br>
-        <div class="d-flex justify-content-end">
-            <a>
-                <button onclick="saveRating()" id="submit" class="btn btn-danger" type="button">Submit</button>
-            </a>
-        </div>
-        <br>
-        <div class="d-flex justify-content-end">
-            <a href="main.html">
-                <button onclick="" id="cancel" class="btn btn-secondary" type="button">Cancel</button>
-            </a>
-        </div>
-<<<<<<< HEAD
+            <br>
+            <label for="rest_comment" style="color: white">Comments:</label>
+            <div class="mb-3 mt-3">
+                <textarea id="rest_comment" class="form-control" rows="5" id="comment" name="text"></textarea>
+            </div>
+            <br>
+            <div class="d-flex justify-content-end">
+                <a>
+                    <button onclick="saveRating()" id="submit" class="btn btn-danger" type="button">Submit</button>
+                </a>
+            </div>
+            <br>
+            <div class="d-flex justify-content-end">
+                <a href="main.html">
+                    <button onclick="" id="cancel" class="btn btn-secondary" type="button">Cancel</button>
+                </a>
+            </div>
+        </form>
     </div>
-        <!-- copyright footer -->
-        <nav id="footerPlaceholder"></nav>
-=======
-    </form>
     <!-- copyright footer -->
     <nav id="footerPlaceholder"></nav>
->>>>>>> 2629b62 (modified rating)
 
     <!-- Link to API keys go here -->
     <script src="./scripts/firebaseAPI_BBY24.js"></script>
@@ -101,6 +96,6 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/rating.js"></script>
 
-    </body>
+</body>
 
 </html>
