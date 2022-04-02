@@ -33,13 +33,13 @@ function writePosts() {
      postsRef.add({
           code: "BBY01",
           postOwner: "Vivian",
-          country: "Arab",
-          name: "Kitchen Craft Eatery",
+          country: "Myanmar",
+          name: "Life of Pie",
           city: "Burnaby",
           openingHour: "9:00 am",
           closingHour: "9:00 pm",
-          details: "Vivian goes here regularly",
-          last_updated: firebase.firestore.FieldValue.serverTimestamp()
+          details: "You are the pumpkin to my pie. Sweet as pumpkin pie.",
+          last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 26, 2022"))
 
      });
 
@@ -50,21 +50,33 @@ function writePosts() {
           name: "Lord of the Wings",
           city: "Downtown Vancouver",
           openingHour: "10:00 am",
-          closingHour: "9:00 pm",
-          details: "Naz goes here regularly",
+          closingHour: "10:00 pm",
+          details: "Where a bucket full of wings feels like home.",
           last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 10, 2022"))
      });
 
      postsRef.add({
           code: "BBY03",
-          postOwner: "Chilan",
-          country: "China",
-          name: "Gotham Steak House",
-          city: "New Westmister",
-          openingHour: "10:00 am",
-          closingHour: "9:00 pm",
-          details: "Chilan goes here regularly",
+          postOwner: "Chi Lan",
+          country: "Vietnam",
+          name: "Tequila Mockingbird",
+          city: "Victoria",
+          openingHour: "11:00 am",
+          closingHour: "2:00 am",
+          details: "When life gives you lemons, grab salt & tequila!",
           last_updated: firebase.firestore.Timestamp.fromDate(new Date("January 1, 2022"))
+     });
+
+     postsRef.add({
+          code: "BBY04",
+          postOwner: "Tushar",
+          country: "India",
+          name: "Pita Pan",
+          city: "Richmond",
+          openingHour: "8:00 am",
+          closingHour: "10:00 pm",
+          details: "You are the hummus to my bread & breath to my life.",
+          last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 30, 2022"))
      });
 }
 
@@ -76,7 +88,7 @@ function populateCards(key, operation, value) {
      var cardTemplate = document.getElementById("postCardTemplate");
      var postCardGroup = document.getElementById("postCardGroup");
      while (postCardTemplate.firstChild) {
-     postCardTemplate.removeChild(postCardTemplate.firstChild)
+          postCardTemplate.removeChild(postCardTemplate.firstChild)
      }
      db.collection("posts")
           .where(key, operation, value)
@@ -90,11 +102,12 @@ function populateCards(key, operation, value) {
                     createOneCard(doc, cardTemplate, postCardGroup)
                })
           })
+     testHikeCard.querySelector('.read-more').href = "rating.html?restName=" + restName + "&id=" + restID;
 }
 
 function createOneCard(doc, cardTemplate, cardDiv) {
 
-     
+
      console.log(doc.data());
      var postID = doc.data().code;
      var title = doc.data().name;
@@ -127,7 +140,7 @@ function displayBySearch() {
      if (value) {
           console.log(value);
           populateCards("name", "==", value);
-     }else
+     } else
           populateCards("name", "!=", value);
 }
 
@@ -157,11 +170,11 @@ function addLikes(postID) {
 function saveBookmark(postID) {
 
      currentUser.set({
-               bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
+          bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
 
-          }, {
-               merge: true
-          })
+     }, {
+          merge: true
+     })
           .then(function () {
                console.log("Post is saved for: " + currentUser);
                var iconID = 'save-' + postID;
