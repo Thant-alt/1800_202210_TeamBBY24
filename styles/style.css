@@ -7,7 +7,7 @@
 
 
 body {
-    background: -webkit-linear-gradient(left, #bebebe, var(--white));
+    background: -webkit-linear-gradient(left, var(--white));
     width: 100%;
     height: 100%;
     margin: 0;
@@ -21,7 +21,7 @@ body {
     background-size: cover;
     background-attachment: scroll;
     background-repeat: no-repeat;
-    background-color: var(--white);
+    background-image: url(../images/background.jpeg);
 }
 
 .container1 {
@@ -43,7 +43,7 @@ body {
 }
 
 .container {
-    color: var(--black);
+    color: #a9a9a9;
 }
 
 .emp-profile {
