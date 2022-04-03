@@ -233,3 +233,17 @@ p {
         font-size: 12px
     }
 }
+
+.card-image {
+    float: center;
+    width:  600px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.card-img-top {
+        float: center;
+        width:  600px;
+        height: 600px;
+        object-fit: cover;
+}

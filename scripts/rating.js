@@ -1,13 +1,21 @@
 let postID = localStorage.getItem("postID");
+console.log(postID);
+
 
 db.collection("posts").where("code", "==", postID)
 .get()
 .then(queryPost => {
+    console.log("PROGRAM START HERE")
+
     size = queryPost.size;
     posts = queryPost.docs;
-    
+
+    console.log(size);
+    console.log(posts);
+    console.log(postID);
+
     if (size == 1) {
-        var thisPost = post[0].data();
+        var thisPost = posts[0].data();
         var name = thisPost.name;
         document.getElementById("RestName").innerHTML = name;
     } else {
@@ -41,6 +49,7 @@ function saveRating() {
                         userID: user.uid,
                         comment: restComment,
                         rating: starRating,
+                        restaurantID: postID,
                     }).then(function () {
                         console.log("New rating added to firestore");
                         window.location.assign("rating-thankyou.html");

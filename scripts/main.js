@@ -78,6 +78,54 @@ function writePosts() {
           details: "You are the hummus to my bread & breath to my life.",
           last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 30, 2022"))
      });
+
+     postsRef.add({
+          code: "BBY05",
+          postOwner: "test-user1",
+          country: "Iran",
+          name: "Frying Nemo",
+          city: "South Vancouver",
+          openingHour: "10:00 am",
+          closingHour: "10:00 pm",
+          details: "Time fries whenever I'm with you.",
+          last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 21, 2022"))
+     });
+
+     postsRef.add({
+          code: "BBY06",
+          postOwner: "test-user2",
+          country: "Vietnam",
+          name: "The Codfather",
+          city: "West End",
+          openingHour: "10:00 am",
+          closingHour: "10:00 pm",
+          details: "Thank cod, it's fryday, the best day of the week",
+          last_updated: firebase.firestore.Timestamp.fromDate(new Date("February 21, 2022"))
+     });
+
+     postsRef.add({
+          code: "BBY07",
+          postOwner: "test-user3",
+          country: "Myanmar",
+          name: "Planet of Crepes",
+          city: "Hastings",
+          openingHour: "10:00 am",
+          closingHour: "10:00 pm",
+          details: "Holy Crepe, it's flippin's pancake day.",
+          last_updated: firebase.firestore.Timestamp.fromDate(new Date("January 11, 2022"))
+     });
+
+     postsRef.add({
+          code: "BBY08",
+          postOwner: "test-user4",
+          country: "India",
+          name: "Happy Grillmore",
+          city: "Fairview",
+          openingHour: "10:00 am",
+          closingHour: "10:00 pm",
+          details: "BBQ cause you can't live a full life on an empty stomach.",
+          last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 14, 2022"))
+     });
 }
 
 
@@ -110,6 +158,7 @@ function createOneCard(doc, cardTemplate, cardDiv) {
 
      console.log(doc.data());
      var postID = doc.data().code;
+     localStorage.setItem("postID", postID)
      console.log(postID);
      var title = doc.data().name;
      var postScore = doc.data().scores;
@@ -130,7 +179,7 @@ function createOneCard(doc, cardTemplate, cardDiv) {
      // //this is the line added so that it makes the icon clickable and call another function
      testPostCard.querySelector('.likeCard').onclick = () => addLikes(postID);
      testPostCard.querySelector(".scores-goes-here").innerHTML = postScore;
-     testPostCard.querySelector('.card-image').src = `./images/${postID}.jpg`;
+     testPostCard.querySelector('.card-image').src = `./images/${postID}.jpeg`;
      cardDiv.appendChild(testPostCard);
 }
 
