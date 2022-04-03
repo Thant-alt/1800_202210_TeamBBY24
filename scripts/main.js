@@ -110,6 +110,7 @@ function createOneCard(doc, cardTemplate, cardDiv) {
 
      console.log(doc.data());
      var postID = doc.data().code;
+     console.log(postID);
      var title = doc.data().name;
      var postScore = doc.data().scores;
      var details = doc.data().details;

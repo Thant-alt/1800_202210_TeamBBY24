@@ -1,23 +1,18 @@
 let postID = localStorage.getItem("postID");
-console.log(postID);
-db.collection("posts").where("code", "==", postID)
-    .get()
-    .then(queryPost => {
-        //see how many results you have got from the query
-        size = queryPost.size;
-        // get the documents of query
-        posts = queryPost.docs;
 
-        // We want to have one document per post, so if the the result of 
-        //the query is more than one, we can check it right now and clean the DB if needed.
-        console.log();
-        if (size == 1) {
-            var thisPost = posts[0].data();
-            var name = thisPost.name;
-            document.getElementById("RestName").innerHTML = name;
-        } else {
-            console.log("Query has more than one data")
-        }
+db.collection("posts").where("code", "==", postID)
+.get()
+.then(queryPost => {
+    size = queryPost.size;
+    posts = queryPost.docs;
+    
+    if (size == 1) {
+        var thisPost = post[0].data();
+        var name = thisPost.name;
+        document.getElementById("RestName").innerHTML = name;
+    } else {
+        console.log("Query has more than one data")
+    }
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
