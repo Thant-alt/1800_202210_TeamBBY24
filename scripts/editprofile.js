@@ -56,9 +56,11 @@ function editUserInfo() {
 
  function saveUserInfo() {
     userName = document.getElementById('nameInput').value;       
+    localStorage.setItem("userName", userName);
     userBirthday = document.getElementById('birthdayInput').value;     
     userEmail = document.getElementById('emailInput').value;
     userRegion = document.getElementById('regionInput').value;
+    localStorage.setItem("userRegion", userRegion);
     userGender = document.getElementById('genderInput').value;
     userPhoneNumber = document.getElementById('phoneNumberInput').value;
 

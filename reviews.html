@@ -45,54 +45,22 @@
     <!------------------------------>
 
     <!-- our own navbar goes here -->
-    <div class="container0 bg">
-        <nav id="navbarPlaceholder"></nav>
-        <div class="container">
-            <div>
-                <div class="stars">
-                    <mat-icon *ngFor="let star of stars">{{star}}</mat-icon>
-                    <div>({{reviews.length}})</div>
-                </div>
-                <div class="reviews" (click)="showReviewsBox()">
-                    <span>Read all {{reviews.length}} Reviews</span>
-                </div>
-                <div class="write" (click)="showCommentBox()">
-                    <span>Write a review</span>
-                </div>
-            </div>
-            <div class="comment-box" *ngIf="commentBox" [formGroup]="commentForm">
-                <div
-                    [ngClass]="{'has-error' : commentForm.get('comment').errors && (commentForm.get('comment').touched || commentForm.get('comment').dirty)}">
-                    <label> Enter a comment</label>
-                    <textarea formControlName="comment" required></textarea>
-                    <div class="error-msg"
-                        *ngIf="commentForm.get('comment').errors && (commentForm.get('comment').touched || commentForm.get('comment').dirty)">
-                        <span *ngIf="commentForm.get('comment').errors.required">
-                            Comment field is required
-                        </span>
 
-                    </div>
-                </div>
-                <div
-                    [ngClass]="{'has-error' : commentForm.get('assessment').errors && (commentForm.get('assessment').touched || commentForm.get('assessment').dirty)}">
-
-                    <label for="">Evaluate from 1 to 5</label>
-                    <input type="text" (keypress)="validPaymentInput($event)" formControlName="assessment" max="5"
-                        maxlength="1" required>
-                    <app-button btnText="Submit" [disabled]="!commentForm.valid" (click)="sendComment()"></app-button>
-                </div>
-            </div>
-            <div class="reviews-box" *ngIf="reviewsBox && reviews.length > 0">
-                <div class="review" *ngFor="let review of reviews">{{ review.comment }}</div>
-            </div>
+    <nav id="navbarPlaceholder"></nav>
+    <!-- Content here -->
+    <!-- Restaurant Reviews -->
+    <br>
+    <div class="container">
+        <h1>Reviews for <span id="RestName"></span></h1>
+        <br>
+        <div class="card">
+            <h4><span id="username-goes-here"></span>Username</h4>
+            <p><span id="rating-goes-here"></span><span> </span>Stars</p>
+            <p><span id="comment-goes-here"></span>Reviews</p>
+            <br>
         </div>
-        javascript
-        angular
-        firebase
-
-
+        <br>
     </div>
-
 
 
     <!-- copyright footer -->
