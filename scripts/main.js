@@ -150,16 +150,15 @@ function populateCards(key, operation, value) {
                     createOneCard(doc, cardTemplate, postCardGroup)
                })
           })
-     testHikeCard.querySelector('.read-more').href = "rating.html?restName=" + restName + "&id=" + restID;
 }
 
-function createOneCard(doc, cardTemplate, cardDiv) {
+async function createOneCard(doc, cardTemplate, cardDiv) {
 
 
-     console.log(doc.data());
-     var postID = doc.data().code;
+     console.log(doc.data().userID);
+     var postID = doc.id;
      localStorage.setItem("postID", postID)
-     console.log(postID);
+     console.log("PostID" + postID);
      var title = doc.data().name;
      var postScore = doc.data().scores;
      var details = doc.data().details;
@@ -179,7 +178,9 @@ function createOneCard(doc, cardTemplate, cardDiv) {
      // //this is the line added so that it makes the icon clickable and call another function
      testPostCard.querySelector('.likeCard').onclick = () => addLikes(postID);
      testPostCard.querySelector(".scores-goes-here").innerHTML = postScore;
-     testPostCard.querySelector('.card-image').src = `./images/${postID}.jpeg`;
+     testPostCard.querySelector(".scores-goes-here").id = postID + "-score";
+     testPostCard.querySelector('.card-image').src =doc.data().restaurantURL;
+     // testPostCard.querySelector('.card-image').src = `./images/${postID}.jpeg`;
      cardDiv.appendChild(testPostCard);
 }
 
@@ -195,26 +196,18 @@ function displayBySearch() {
 }
 
 
-function addLikes(postID) {
-     console.log("inside");
-     db.collection("posts").where("code", "==", postID)
+async function addLikes(postID) {
+     console.log(postID + "-score");
+     
+     await db.collection("posts").doc(postID).update({
+          scores: firebase.firestore.FieldValue.increment(1)
+     });
+     db.collection("posts")
+          .doc(postID)
           .get()
-          .then(queryPost => {
-               size = queryPost.size;
-               posts = queryPost.docs;
-               if (size = 1) {
-                    id = posts[0].id;
-                    console.log(id);
-                    db.collection("posts").doc(id).update({
-                         scores: firebase.firestore.FieldValue.increment(1)
-                    })
-               } else {
-                    console.log("Query has more than one data.")
-               }
-          })
-          .catch((error) => {
-               console.log("Error getting documents: ", error)
-          })
+          .then( post => {
+               document.getElementById(postID + "-score").innerHTML = post.data().scores;
+          });
 }
 
 function saveBookmark(postID) {

@@ -84,7 +84,7 @@ function editUserInfo() {
                 console.log("Document successfully updated!");
                 document.getElementById('personalInfoFields').disabled = true;
                 
-                    window.location.assign("main.html");
+                    window.location.assign("Profile.html");
             })
 }
     })

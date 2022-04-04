@@ -11,7 +11,7 @@
 
 
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap Library CSS CDN go here -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -20,12 +20,12 @@
   <!-- Boostrap Library JS CDN  go here -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+    </script>
 
   <!-------------------------------------------------------->
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
   <!-------------------------------------------------------->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --> 
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -45,79 +45,78 @@
 
 <body>
   <div class="container0 bg">
-  <!-- navbar header -->
-  <nav id="navbarPlaceholder"></nav>
+    <!-- navbar header -->
+    <nav id="navbarPlaceholder"></nav>
 
-  <div class="container" id="restaurantInfoFields" disabled>
-    <!-- Content here -->
-    <div class="p-2"> 
+    <div class="container" id="restaurantInfoFields" disabled>
+      <!-- Content here -->
+      <div class="p-2">
         <label> Add New Restaurant </label>
         <br>
         <input id="rest_name" type="text">
-    </div>
-    <div class="p-2">
-        <label> Add Food Type </label>
+      </div>
+      <div class="p-2">
+        <label> Add Country </label>
         <br>
-        <input id="food_type" type="text">
-    </div>
-    <div class="p-2">
+        <input id="food_country" type="text">
+      </div>
+      <div class="p-2">
+        <label> Add City </label>
+        <br>
+        <input id="food_city" type="text">
+      </div>
+      <div class="p-2">
         <input type="file" id="image_input" accept="image/*">
         <div id="post_image">
-          <img id="mypic-goes-here" src="" width=300 height=300/>
+          <img id="mypic-goes-here" src="" width=300 height=300 />
         </div>
-    </div>
-    <br>
-    <br>
-    <div class="mb-3 mt-3">
+      </div>
+      <br>
+      <br>
+      <div class="mb-3 mt-3">
         <label for="rest_comment">Comments:</label>
         <textarea id="rest_comment" class="form-control" rows="5" id="comment" name="text"></textarea>
+      </div>
+      <div class="p-2">
+        <div class="form-check1 form-check-inline">
+          <label>Opening Hour:</label>
+        </div>
+        <div class="form-check1 form-check-inline">
+          <input class="form-time-input" type="time" name="opening-time" id="opening_time">
+        </div>
+
+      </div>
+      <div class="p-2">
+        <div class="form-check2 form-check-inline">
+          <label>Closing Hour:</label>
+        </div>
+        <div class="form-check2 form-check-inline">
+          <input class="form-time-input" type="time" name="closing-time" id="closing_time">
+        </div>
+
+      </div>
+
+
+      <div class="d-grid gap-2 d-md-block">
+        <button onclick="saveRestaurantInfo()" id="submit" type="button" class="btn btn-lg btn-danger">SUBMIT</button>
+        <button onclick="location.href='main.html'" type="button" class="btn btn-secondary btn-lg" >CANCLE</button>
+        <!-- <button onclick="saveRestaurantInfo()" id="submit" class="btn btn-danger" type="button">Submit</button> -->
+      </div>
     </div>
-    <div class="p-2">
-      <div class="form-check1 form-check-inline">
-        <label>Customer Service:</label>
-      </div>
-      <div class="form-check1 form-check-inline">
-        <input class="form-check-input" type="radio" name="customer-service" id="inlineRadio2" value="Satisfactory">
-        <label class="form-check-label" for="inlineRadio2">Satisfactory</label>
-      </div>
-      <div class="form-check1 form-check-inline">
-        <input class="form-check-input" type="radio" name="customer-service" id="inlineRadio3" value="Unsatisfactory" >
-        <label class="form-check-label" for="inlineRadio3">Unsatisfactory</label>
-      </div>
-    </div>
-    <div class="p-2">
-      <div class="form-check2 form-check-inline">
-        <label>Price Range:</label>
-      </div>
-      <div class="form-check2 form-check-inline">
-        <input class="form-check-input" type="radio" name="price-range" id="inlineRadio4" value="Expensive">
-        <label class="form-check-label" for="inlineRadio4">Expensive</label>
-      </div>
-      <div class="form-check2 form-check-inline">
-        <input class="form-check-input" type="radio" name="price-range" id="inlineRadio5" value="Reasonable">
-        <label class="form-check-label" for="inlineRadio5">Reasonable</label>
-      </div>
-    </div>
+    <!-- copyright footer -->
+    <nav id="footerPlaceholder"></nav>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <script src="./scripts/firebaseAPI_BBY24.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/post.js"></script>
+    <!---------------------------------------------->
+    <!-- Link to API keys go here -->
 
 
-    <div class="d-grid gap-2">
-        <button onclick="saveRestaurantInfo()" id="submit" class="btn btn-danger" type="button">Submit</button>
-    </div>
-  </div>
-  <!-- copyright footer -->
-  <nav id="footerPlaceholder"></nav>
-
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <script src="./scripts/firebaseAPI_BBY24.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/post.js"></script>
-  <!---------------------------------------------->
-  <!-- Link to API keys go here -->
-
-
-  <!-- Link to scripts of your own -->
-  <script src="./scripts/script.js"></script>
+    <!-- Link to scripts of your own -->
+    <script src="./scripts/script.js"></script>
 
 
 </body>

@@ -14,7 +14,7 @@ function uploadedPicture() {
             //change the DOM img element source to point to this file
             image.src = blob;    //assign the "src" property of the "img" tag
 
-            var storageRef = firebase.storage().ref("images/" + user.uid + ".jpg"); // Get reference
+            var storageRef = firebase.storage().ref("images/" + new Date().getTime() + ".jpg"); // Get reference
             // Upload picked file to cloud storage
             storageRef.put(e.target.files[0])
                 .then(function () {
@@ -49,10 +49,11 @@ editRestInfo();
 
 function saveRestaurantInfo() {
     var restaurantName = document.getElementById('rest_name').value;
-    var foodType = document.getElementById('food_type').value;
+    var foodCountry = document.getElementById('food_country').value;
+    var foodCity = document.getElementById('food_city').value;
     var restComment = document.getElementById('rest_comment').value;
-    var customerService = document.querySelector('input[name="customer-service"]:checked').value;
-    var priceRange = document.querySelector('input[name="price-range"]:checked').value;
+    var openingHour = document.getElementById('opening_time').value;
+    var closingHour = document.getElementById('closing_time').value;
     var imgsrc = document.getElementById("mypic-goes-here").dataset.url;
 
 
@@ -60,14 +61,16 @@ function saveRestaurantInfo() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
         if (user) {
-            db.collection("restaurant").add({         //write to firestore. We are using the UID for the ID in users collection
-                userID: user.uid,
+            db.collection("posts").add({         //write to firestore. We are using the UID for the ID in users collection
+                postOwner: user.displayName,
                 name: restaurantName,
-                type: foodType,
-                comment: restComment,
-                custom: customerService,
-                price: priceRange,
-                restaurantURL: imgsrc
+                country: foodCountry,
+                city: foodCity,
+                details: restComment,
+                openingHour: openingHour,
+                closingHour: closingHour,
+                restaurantURL: imgsrc,
+                last_updated: firebase.firestore.Timestamp.fromDate(new Date())
             }).then(function () {
                 console.log("New restaurant added to firestore");
                 window.location.assign("main.html");        //re-direct to main.html after signup
