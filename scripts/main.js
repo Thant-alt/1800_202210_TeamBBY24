@@ -157,6 +157,7 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
 
      console.log(doc.data().userID);
      var postID = doc.id;
+     localStorage.setItem("postID", postID);
      console.log(postID);
      var restID = doc.data().code;
      localStorage.setItem("restID", restID);

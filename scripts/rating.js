@@ -1,6 +1,6 @@
-let restID = localStorage.getItem("restID");
-console.log(restID);
-db.collection("posts").where("code", "==", restID)
+let postID = localStorage.getItem("postID");
+console.log(postID);
+db.collection("posts").where("postID", "==", postID)
     .get()
     .then(queryPost => {
         console.log("PROGRAM START HERE")
@@ -8,7 +8,7 @@ db.collection("posts").where("code", "==", restID)
         posts = queryPost.docs;
         console.log(size);
         console.log(posts);
-        console.log(restID);
+        console.log(postID);
         if (size == 1) {
             var thisPost = posts[0].data();
             var name = thisPost.name;
