@@ -1,6 +1,6 @@
-let postID = localStorage.getItem("postID");
-console.log(postID);
-db.collection("posts").where("code", "==", postID)
+let restID = localStorage.getItem("restID");
+console.log(restID);
+db.collection("posts").where("code", "==", restID)
     .get()
     .then(queryPost => {
         console.log("PROGRAM START HERE")
@@ -8,7 +8,7 @@ db.collection("posts").where("code", "==", postID)
         posts = queryPost.docs;
         console.log(size);
         console.log(posts);
-        console.log(postID);
+        console.log(restID);
         if (size == 1) {
             var thisPost = posts[0].data();
             var name = thisPost.name;
@@ -50,7 +50,7 @@ function saveRating() {
                         userID: user.uid,
                         comment: restComment,
                         rating: starRating,
-                        restaurantID: postID,
+                        restaurantID: restID,
                         userName: userName,
                     }).then(function () {
                         console.log("New rating added to firestore");

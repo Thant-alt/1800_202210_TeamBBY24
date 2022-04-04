@@ -157,8 +157,9 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
 
      console.log(doc.data().userID);
      var postID = doc.id;
-     localStorage.setItem("postID", postID)
-     console.log("PostID" + postID);
+     console.log(postID);
+     var restID = doc.data().code;
+     localStorage.setItem("restID", restID);
      var title = doc.data().name;
      var postScore = doc.data().scores;
      var details = doc.data().details;
@@ -180,7 +181,7 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      testPostCard.querySelector(".scores-goes-here").innerHTML = postScore;
      testPostCard.querySelector(".scores-goes-here").id = postID + "-score";
      testPostCard.querySelector('.card-image').src =doc.data().restaurantURL;
-     // testPostCard.querySelector('.card-image').src = `./images/${postID}.jpeg`;
+     testPostCard.querySelector('.card-image').src = `./images/${restID}.jpeg`;
      cardDiv.appendChild(testPostCard);
 }
 

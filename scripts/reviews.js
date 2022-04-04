@@ -1,5 +1,5 @@
-let postID = localStorage.getItem("postID");
-db.collection("posts").where("code", "==", postID)
+let restID = localStorage.getItem("restID");
+db.collection("posts").where("code", "==", restID)
     .get()
     .then(queryPost => {
         size = queryPost.size;
@@ -18,14 +18,18 @@ db.collection("posts").where("code", "==", postID)
 
 
 
-db.collection("reviews").where("restaurantID", "==", postID)
+db.collection("reviews").where("restaurantID", "==", restID)
     .get()
     .then(queryReview => {
         size = queryReview.size;
+        console.log(size);
         reviews = queryReview.docs;
         console.log(reviews);
-        if (size > 0) {
-            var thisReview = reviews[0].data();
+        count=0;
+        if (size > count) {
+            console.log(count);
+            var thisReview = reviews[count].data();
+            console.log(count);
             var userName = thisReview.userName;
             console.log(userName);
             var comment = thisReview.comment;
@@ -35,6 +39,8 @@ db.collection("reviews").where("restaurantID", "==", postID)
             document.getElementById("username-goes-here").innerHTML = userName;
             document.getElementById("comment-goes-here").innerHTML = comment;
             document.getElementById("rating-goes-here").innerHTML = rating;
+            count++;
+            console.log(count);
         } 
     })
     .catch((error) => {

@@ -22,7 +22,7 @@ function getBookmarks(user) {
                     if (size == 1) {
                         var doc = queryData[0].data();
                         var restaurantName = doc.name; //gets the name field
-                        var postID = doc.code; //gets the unique ID field
+                        var restID = doc.code; //gets the unique ID field
                         var owner = doc.postOwner;
                         var country = doc.country; //gets the length field
                         var text = doc.details;
@@ -32,7 +32,7 @@ function getBookmarks(user) {
                         newCard.querySelector('.card-length').innerHTML = country;
                         newCard.querySelector('.card-text').innerHTML = text;
                         newCard.querySelector('a').onclick = () => setHikeData(postID);
-                        newCard.querySelector('img').src = `./images/${postID}.jpg`;
+                        newCard.querySelector('img').src = `./images/${restID}.jpeg`;
                         postCardGroup.appendChild(newCard);
                     } else {
                         console.log("Query has more than one data")
