@@ -82,7 +82,7 @@ function writePosts() {
      postsRef.add({
           code: "BBY05",
           postOwner: "test-user1",
-          country: "Iran",
+          country: "Japan",
           name: "Frying Nemo",
           city: "South Vancouver",
           openingHour: "10:00 am",
@@ -94,7 +94,7 @@ function writePosts() {
      postsRef.add({
           code: "BBY06",
           postOwner: "test-user2",
-          country: "Vietnam",
+          country: "China",
           name: "The Codfather",
           city: "West End",
           openingHour: "10:00 am",
@@ -106,7 +106,7 @@ function writePosts() {
      postsRef.add({
           code: "BBY07",
           postOwner: "test-user3",
-          country: "Myanmar",
+          country: "Singapore",
           name: "Planet of Crepes",
           city: "Hastings",
           openingHour: "10:00 am",
@@ -118,7 +118,7 @@ function writePosts() {
      postsRef.add({
           code: "BBY08",
           postOwner: "test-user4",
-          country: "India",
+          country: "South Korea",
           name: "Happy Grillmore",
           city: "Fairview",
           openingHour: "10:00 am",

@@ -24,7 +24,7 @@ db.collection("reviews").where("restaurantID", "==", postID)
         size = queryReview.size;
         reviews = queryReview.docs;
         console.log(reviews);
-        while (size > 0) {
+        if (size > 0) {
             var thisReview = reviews[0].data();
             var userName = thisReview.userName;
             console.log(userName);
