@@ -165,6 +165,7 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      var details = doc.data().details;
      var postOwner = doc.data().postOwner;
      var country = doc.data().country;
+     var restIMG = doc.data().restaurantURL
      let testPostCard = cardTemplate.content.cloneNode(true);
      //update title and text and image
      testPostCard.querySelector('.card-title').innerHTML = title;
@@ -180,8 +181,8 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      testPostCard.querySelector('.likeCard').onclick = () => addLikes(postID);
      testPostCard.querySelector(".scores-goes-here").innerHTML = postScore;
      testPostCard.querySelector(".scores-goes-here").id = postID + "-score";
-     testPostCard.querySelector('.card-image').src =doc.data().restaurantURL;
-     testPostCard.querySelector('.card-image').src = `./images/${restID}.jpeg`;
+     testPostCard.querySelector('.card-image').src = restIMG;
+     //testPostCard.querySelector('.card-image').src = `./images/${restID}.jpeg`;
      cardDiv.appendChild(testPostCard);
 }
 

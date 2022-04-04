@@ -16,8 +16,6 @@ db.collection("posts").where("code", "==", restID)
         console.log("Error getting documents: ", error);
     });
 
-
-
 db.collection("reviews").where("restaurantID", "==", restID)
     .get()
     .then(queryReview => {
