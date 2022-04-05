@@ -4,6 +4,7 @@ firebase.auth().onAuthStateChanged(user => {
      if (user) {
           console.log(user.uid);
           currentUser = db.collection("users").doc(user.uid);
+          console.log(currentUser);
           insertName();
           currentUser.get().then(function (doc) {
                console.log(doc.data());
@@ -155,7 +156,7 @@ function populateCards(key, operation, value) {
 async function createOneCard(doc, cardTemplate, cardDiv) {
 
 
-     console.log(doc.data().userID);
+     console.log(doc.data().name);
      var postID = doc.id;
      localStorage.setItem("postID", postID);
      console.log(postID);

@@ -15,14 +15,14 @@ function getBookmarks(user) {
             let CardTemplate = document.getElementById("CardTemplate");
             bookmarks.forEach(thisPostID => {
                 console.log(thisPostID);
-                db.collection("posts").where("code", "==", thisPostID).get().then(snap => {
+                db.collection("posts").where("postID", "==", thisPostID).get().then(snap => {
                     size = snap.size;
                     queryData = snap.docs;
                     
                     if (size == 1) {
                         var doc = queryData[0].data();
                         var restaurantName = doc.name; //gets the name field
-                        var restID = doc.code; //gets the unique ID field
+                        var restID = doc.postID; //gets the unique ID field
                         var owner = doc.postOwner;
                         var country = doc.country; //gets the length field
                         var text = doc.details;
