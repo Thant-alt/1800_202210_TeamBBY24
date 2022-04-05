@@ -176,9 +176,9 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      testPostCard.querySelector('.card-country').innerHTML = country;
      // //this line sets the id attribute for the <i> tag in the format of "save-postID" 
      // //so later we know which hike to bookmark based on which post was clicked
-     testPostCard.querySelector('.save-button').id = 'save-' + postID;
+     testPostCard.querySelector('.save-button').id = 'save-' + restID;
      // // this line will call a function to save the hikes to the user's document             
-     testPostCard.querySelector('.save-button').onclick = () => saveBookmark(postID);
+     testPostCard.querySelector('.save-button').onclick = () => saveBookmark(restID);
      // //this is the line added so that it makes the icon clickable and call another function
      testPostCard.querySelector('.likeCard').onclick = () => addLikes(postID);
      testPostCard.querySelector(".scores-goes-here").innerHTML = postScore;
@@ -214,17 +214,17 @@ async function addLikes(postID) {
           });
 }
 
-function saveBookmark(postID) {
+function saveBookmark(restID) {
 
      currentUser.set({
-          bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
+          bookmarks: firebase.firestore.FieldValue.arrayUnion(restID)
 
      }, {
           merge: true
      })
           .then(function () {
                console.log("Post is saved for: " + currentUser);
-               var iconID = 'save-' + postID;
+               var iconID = 'save-' + restID;
                document.getElementById(iconID).innerText = 'bookmark';
           });
 
