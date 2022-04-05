@@ -162,6 +162,7 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      var restID = doc.data().code;
      localStorage.setItem("restID", restID);
      var title = doc.data().name;
+     localStorage.setItem("restID", restID);
      var postScore = doc.data().scores;
      var details = doc.data().details;
      var postOwner = doc.data().postOwner;

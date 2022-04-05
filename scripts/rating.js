@@ -1,25 +1,17 @@
 let postID = localStorage.getItem("postID");
 console.log(postID);
-db.collection("posts").where("postID", "==", postID)
-    .get()
-    .then(queryPost => {
-        console.log("PROGRAM START HERE")
-        size = queryPost.size;
-        posts = queryPost.docs;
-        console.log(size);
-        console.log(posts);
-        console.log(postID);
-        if (size == 1) {
-            var thisPost = posts[0].data();
-            var name = thisPost.name;
-            document.getElementById("RestName").innerHTML = name;
-        } else {
-            console.log("Query has more than one data")
-        }
+db.collection("posts")
+    .doc(postID)
+    .onSnapshot(function (postDoc) {
+        var restName = postDoc.data().name;
+        document.getElementById("RestName").innerHTML = restName;
+        var commentPostID = postID;
+        console.log(commentPostID);
+        localStorage.setItem("commentPostID", commentPostID);
     })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
+
+
+
 
 let userName = localStorage.getItem("userName");
 db.collection("users").where("name", "==", userName)
@@ -50,7 +42,7 @@ function saveRating() {
                         userID: user.uid,
                         comment: restComment,
                         rating: starRating,
-                        restaurantID: restID,
+                        commentPostID: postID,
                         userName: userName,
                     }).then(function () {
                         console.log("New rating added to firestore");
