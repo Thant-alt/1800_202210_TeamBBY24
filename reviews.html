@@ -50,36 +50,41 @@
     <nav id="navbarPlaceholder"></nav>
     <!-- Content here -->
     <!-- Restaurant Reviews -->
-    <br>
-    <template id="postCardTemplate">
-        <div class="card" style="width: 1000px">
-            <div class="card-body">
-                <h5 class="card-title">userName</h5>
-                <br>
-                <p class="card-length">&nbsp;stars</p>
-                <br>
-                <p class="card-text">Comment</p>
+    <div class="container1 bg">
+        <br>
+        <template id="postCardTemplate">
+            <div class="card" style="width: 1000px">
+                <div class="card-body">
+                    <h5 class="card-title">userName</h5>
+                    <br>
+                    <p class="card-length">&nbsp;stars</p>
+                    <br>
+                    <p class="card-text">Comment</p>
+                </div>
             </div>
-        </div>
-    </template>
+        </template>
 
-    <div class="container">
-        <h1>Reviews for <span id="RestName"></span></h1>
-        <!-- Here is container for cards  -->
         <div class="container">
-            <div id="postCardGroup" class="row row-cols-auto">
+            <h1>Reviews for <span id="RestName"></span></h1>
+            <!-- Here is container for cards  -->
+            <div class="container">
+                <div id="postCardGroup" class="row row-cols-auto">
+                </div>
             </div>
+        </div>
+        <div class=" m-2 d-flex justify-content-center">
+            <a href="main.html">
+                <button onclick="" id="back" class="btn btn-secondary" type="button">Go Back To Home</button>
+            </a>
         </div>
     </div>
 
-    <div class=" m-2 d-flex justify-content-center">
-        <a href="main.html">
-            <button onclick="" id="back" class="btn btn-secondary" type="button">Go Back To Home</button>
-        </a>
-    </div>
 
 
-    
+
+
+
+
 
 
     <!-- copyright footer -->
