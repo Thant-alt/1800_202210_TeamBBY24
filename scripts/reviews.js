@@ -25,7 +25,7 @@ db.collection("reviews").where("commentPostID", "==", commentPostID)
             console.log(rating);
             let postCard = postCardTemplate.content.cloneNode(true);
             postCard.querySelector('.card-title').innerHTML = userName;
-            postCard.querySelector('.card-length').innerHTML = rating;
+            postCard.querySelector('.card-length').innerHTML = rating + " stars";
             postCard.querySelector('.card-text').innerHTML = comment;
             postCardGroup.appendChild(postCard);
         })
