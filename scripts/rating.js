@@ -4,6 +4,7 @@ db.collection("posts").where("postID", "==", postID)
     .get()
     .then(queryPost => {
         console.log("PROGRAM START HERE")
+        console.log(queryPost)
         size = queryPost.size;
         posts = queryPost.docs;
         console.log(size);
@@ -50,7 +51,7 @@ function saveRating() {
                         userID: user.uid,
                         comment: restComment,
                         rating: starRating,
-                        restaurantID: restID,
+                        restaurantID: postID,
                         userName: userName,
                     }).then(function () {
                         console.log("New rating added to firestore");
