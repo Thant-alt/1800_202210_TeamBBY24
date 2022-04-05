@@ -161,6 +161,7 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      localStorage.setItem("postID", postID);
      console.log(postID);
      var restID = doc.data().code;
+     console.log(restID);
      localStorage.setItem("restID", restID);
      var title = doc.data().name;
      localStorage.setItem("restID", restID);
@@ -215,17 +216,17 @@ async function addLikes(postID) {
           });
 }
 
-function saveBookmark(restID) {
-
+function saveBookmark(postID) {
+     console.log(currentUser);
      currentUser.set({
-          bookmarks: firebase.firestore.FieldValue.arrayUnion(restID)
+          bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
 
      }, {
-          merge: true
+          merge: false
      })
           .then(function () {
                console.log("Post is saved for: " + currentUser);
-               var iconID = 'save-' + restID;
+               var iconID = 'save-' + postID;
                document.getElementById(iconID).innerText = 'bookmark';
           });
 
