@@ -10,9 +10,6 @@ db.collection("posts")
         localStorage.setItem("commentPostID", commentPostID);
     })
 
-
-
-
 let userName = localStorage.getItem("userName");
 db.collection("users").where("name", "==", userName)
     .get()
@@ -44,6 +41,7 @@ function saveRating() {
                         rating: starRating,
                         commentPostID: postID,
                         userName: userName,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(function () {
                         console.log("New rating added to firestore");
                         window.location.assign("rating-thankyou.html");
