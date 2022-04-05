@@ -15,7 +15,7 @@ db.collection("reviews").where("commentPostID", "==", commentPostID)
     console.log(size);
     reviews = queryReview.docs;
     console.log(reviews);
-    for (let i = 1; size >= i; i++) {
+    for (let i = 0; size > i; i++) {
         console.log(i);
         var thisReview = reviews[i].data();
         console.log(i);
