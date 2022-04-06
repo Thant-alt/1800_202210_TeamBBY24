@@ -15,7 +15,7 @@ function populateInfo() {
                     var userGender = userDoc.data().gender;
                     var userRegion = userDoc.data().region;
                     var userPhoneNumber = userDoc.data().phoneNumber;
-                    
+
 
                     //if the data fields are not empty, then write them in to the form.
                     if (userName != null) {
@@ -25,7 +25,7 @@ function populateInfo() {
                         document.getElementById("birthdayInput").value = userBirthday;
                     }
                     if (userEmail != null) {
-                        document.getElementById("emailInput").value = userEmail; 
+                        document.getElementById("emailInput").value = userEmail;
                     }
                     if (userRegion != null) {
                         document.getElementById("regionInput").value = userRegion;
@@ -39,7 +39,7 @@ function populateInfo() {
                 })
         } else {
             // No user is signed in.
-            console.log ("No user is signed in");
+            console.log("No user is signed in");
         }
     });
 }
@@ -50,14 +50,14 @@ populateInfo();
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
- }
- 
- editUserInfo();
+}
 
- function saveUserInfo() {
-    userName = document.getElementById('nameInput').value;       
+editUserInfo();
+
+function saveUserInfo() {
+    userName = document.getElementById('nameInput').value;
     localStorage.setItem("userName", userName);
-    userBirthday = document.getElementById('birthdayInput').value;     
+    userBirthday = document.getElementById('birthdayInput').value;
     userEmail = document.getElementById('emailInput').value;
     userRegion = document.getElementById('regionInput').value;
     localStorage.setItem("userRegion", userRegion);
@@ -73,19 +73,19 @@ function editUserInfo() {
 
             //write/update the database 
             currentUser.update({
-                name: userName,
-                birthDay: userBirthday,
-                email: userEmail,
-                region: userRegion,
-                gender: userGender,
-                phoneNumber: userPhoneNumber
-            })
-            .then(() => {
-                console.log("Document successfully updated!");
-                document.getElementById('personalInfoFields').disabled = true;
-                
+                    name: userName,
+                    birthDay: userBirthday,
+                    email: userEmail,
+                    region: userRegion,
+                    gender: userGender,
+                    phoneNumber: userPhoneNumber
+                })
+                .then(() => {
+                    console.log("Document successfully updated!");
+                    document.getElementById('personalInfoFields').disabled = true;
+
                     window.location.assign("Profile.html");
-            })
-}
+                })
+        }
     })
 }
