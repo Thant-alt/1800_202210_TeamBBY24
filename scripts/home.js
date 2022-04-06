@@ -65,13 +65,13 @@ uploadProfilePicture();
 function read_display_Quote() {
     var event = new Date(); 
     var options = { weekday: 'long' }; 
-    var weekDay = event. toLocaleDateString('en-US', options).toLowerCase();
-    console. log(weekDay);
+    var weekDay = event.toLocaleDateString('en-US', options).toLowerCase();
+    console.log(weekDay);
     
     db.collection("quotes").doc(weekDay)                                                      //name of the collection and documents should matach excatly with what you have in Firestore
-      .onSnapshot(weekdayDoc => {                                                               //arrow notation
-           console.log(weekdayDoc.data());                          //.data() returns data object
-           document.getElementById("quote-goes-here").innerHTML = weekdayDoc.data().quote;      //using javascript to display the data on the right place
+      .onSnapshot(weekDayDoc => {                                                               //arrow notation
+           console.log(weekDayDoc.data());                          //.data() returns data object
+           document.getElementById("quote-goes-here").innerHTML = weekDayDoc.data().quotes;      //using javascript to display the data on the right place
            
 
            //Here are other ways to access key:value data fields

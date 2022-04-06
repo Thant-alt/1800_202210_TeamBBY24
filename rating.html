@@ -68,16 +68,11 @@
                 <textarea id="rest_comment" class="form-control" rows="5" id="comment" name="text"></textarea>
             </div>
             <br>
-            <div class="d-flex justify-content-end">
-                <a>
-                    <button onclick="saveRating()" id="submit" class="btn btn-danger" type="button">Submit</button>
-                </a>
-            </div>
-            <br>
-            <div class="d-flex justify-content-end">
-                <a href="main.html">
-                    <button onclick="" id="cancel" class="btn btn-secondary" type="button">Cancel</button>
-                </a>
+            <div class="d-grid gap-2 d-md-block">
+                <button onclick="saveRating()" id="submit" type="button"
+                    class="btn btn-lg btn-danger">Submit</button>
+                <button onclick="location.href='main.html'" type="button"
+                    class="btn btn-secondary btn-lg">Cancel</button>
             </div>
         </form>
     </div>
