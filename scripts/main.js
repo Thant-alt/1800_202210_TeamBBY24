@@ -2,14 +2,14 @@ var currentUser;
 var currentUserRegion;
 firebase.auth().onAuthStateChanged(user => {
      if (user) {
-          console.log(user.uid);
+          console.log("userId " + user.uid);
           currentUser = db.collection("users").doc(user.uid);
-          console.log(currentUser);
+          console.log("currentUser " + currentUser);
           insertName();
           currentUser.get().then(function (doc) {
                console.log(doc.data());
                currentUserRegion = doc.data().region;
-               console.log(currentUserRegion);
+               console.log("currentUserRegion " + currentUserRegion);
                populateCards("country", "==", currentUserRegion);
           })
      } else {
@@ -22,7 +22,7 @@ function insertName() {
      currentUser.get().then(userDoc => {
           //get the user name
           var user_Name = userDoc.data().name;
-          console.log(user_Name);
+          console.log("user_name " + user_Name);
           $("#name-goes-here").text(user_Name);
 
      })
@@ -160,11 +160,8 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      var postID = doc.id;
      localStorage.setItem("postID", postID);
      console.log(postID);
-     var restID = doc.data().code;
-     console.log(restID);
-     localStorage.setItem("restID", restID);
      var title = doc.data().name;
-     localStorage.setItem("restID", restID);
+     localStorage.setItem("restID", postID);
      var postScore = doc.data().scores;
      var details = doc.data().details;
      var postOwner = doc.data().postOwner;
@@ -178,9 +175,9 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      testPostCard.querySelector('.card-country').innerHTML = country;
      // //this line sets the id attribute for the <i> tag in the format of "save-postID" 
      // //so later we know which hike to bookmark based on which post was clicked
-     testPostCard.querySelector('.save-button').id = 'save-' + restID;
+     testPostCard.querySelector('.save-button').id = 'save-' + postID;
      // // this line will call a function to save the hikes to the user's document             
-     testPostCard.querySelector('.save-button').onclick = () => saveBookmark(restID);
+     testPostCard.querySelector('.save-button').onclick = () => saveBookmark(postID);
      // //this is the line added so that it makes the icon clickable and call another function
      testPostCard.querySelector('.likeCard').onclick = () => addLikes(postID);
      testPostCard.querySelector(".scores-goes-here").innerHTML = postScore;
@@ -218,11 +215,12 @@ async function addLikes(postID) {
 
 function saveBookmark(postID) {
      console.log(currentUser);
+
      currentUser.set({
           bookmarks: firebase.firestore.FieldValue.arrayUnion(postID)
 
      }, {
-          merge: false
+          merge: true
      })
           .then(function () {
                console.log("Post is saved for: " + currentUser);

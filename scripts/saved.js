@@ -15,14 +15,10 @@ function getBookmarks(user) {
             let CardTemplate = document.getElementById("CardTemplate");
             bookmarks.forEach(thisPostID => {
                 console.log(thisPostID);
-                db.collection("posts").where("postID", "==", thisPostID).get().then(snap => {
-                    size = snap.size;
-                    queryData = snap.docs;
-                    
-                    if (size == 1) {
-                        var doc = queryData[0].data();
+                db.collection("posts").doc(thisPostID).get().then(post => {
+                        var doc = post.data();
                         var restaurantName = doc.name; //gets the name field
-                        var restID = doc.postID; //gets the unique ID field
+                        var restaurantURL = doc.restaurantURL; //gets the unique ID field
                         var owner = doc.postOwner;
                         var country = doc.country; //gets the length field
                         var text = doc.details;
@@ -32,12 +28,8 @@ function getBookmarks(user) {
                         newCard.querySelector('.card-length').innerHTML = country;
                         newCard.querySelector('.card-text').innerHTML = text;
                         newCard.querySelector('a').onclick = () => setHikeData(postID);
-                        newCard.querySelector('img').src = `./images/${restID}.jpeg`;
+                        newCard.querySelector('img').src = restaurantURL;
                         postCardGroup.appendChild(newCard);
-                    } else {
-                        console.log("Query has more than one data")
-                    }
-
                 })
 
             });
