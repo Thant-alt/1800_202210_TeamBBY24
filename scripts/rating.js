@@ -1,4 +1,6 @@
 let postID = localStorage.getItem("postID");
+console.log("RATINGS!");
+
 console.log(postID);
 db.collection("posts")
     .doc(postID)

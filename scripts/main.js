@@ -161,7 +161,6 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      localStorage.setItem("postID", postID);
      console.log(postID);
      var title = doc.data().name;
-     localStorage.setItem("restID", postID);
      var postScore = doc.data().scores;
      var details = doc.data().details;
      var postOwner = doc.data().postOwner;
@@ -184,6 +183,14 @@ async function createOneCard(doc, cardTemplate, cardDiv) {
      testPostCard.querySelector(".scores-goes-here").id = postID + "-score";
      testPostCard.querySelector('.card-image').src = restIMG;
      //testPostCard.querySelector('.card-image').src = `./images/${restID}.jpeg`;
+     testPostCard.querySelector('[href="rating.html"]').addEventListener("click", function (e) {
+          localStorage.setItem("postID", postID);
+          localStorage.setItem("commentPostID", postID);
+      });
+      testPostCard.querySelector('[href="reviews.html"]').addEventListener("click", function (e) {
+          localStorage.setItem("postID", postID);
+          localStorage.setItem("commentPostID", postID);
+      });
      cardDiv.appendChild(testPostCard);
 }
 

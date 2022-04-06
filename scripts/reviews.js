@@ -1,5 +1,5 @@
 let postID = localStorage.getItem("postID");
-console.log(postID);
+console.log("postId" + postID);
 db.collection("posts")
     .doc(postID)
     .onSnapshot(function (postDoc) {
@@ -13,6 +13,7 @@ db.collection("posts")
 var postCardTemplate = document.getElementById("postCardTemplate");
 var postCardGroup = document.getElementById("postCardGroup");
 var commentPostID = localStorage.getItem("commentPostID");
+console.log("CommentPostID: " + commentPostID);
 db.collection("reviews").where("commentPostID", "==", commentPostID)
     .get()
     .then(queryReview => {

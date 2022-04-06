@@ -47,7 +47,7 @@
     <nav id="navbarPlaceholder"></nav>
 
     <div class="container">
-        <h1 class="text-center">My Favorite Places</h1>
+        <p class="text-center fs-3">My Favorite Places</p>
         <!-- Here is container for cards  -->
         <div class="container">
             <div id="postCardGroup" class="row row-cols-auto">
@@ -65,7 +65,10 @@
     <!-- Templates for general use, not displayed -->
     <template id="CardTemplate">
         <div class="card py-2 mx-2" >
-            <img class="card-image card-img-top" src=" ..." alt="...">
+            <img class="card-image card-img-top" src=" ..." alt="..." 
+            style="max-width:90%; height: 50%; display: block;
+            margin-left: auto;
+            margin-right: auto; object-fit: cover;">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <h6>Uploaded By: <span class=" card-owner font-weight-bold">Jeanette Sun</span></h6>
