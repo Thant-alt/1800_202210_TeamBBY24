@@ -22,7 +22,7 @@ var uiConfig = {
             email: user.email //with authenticated user's ID (user.uid)
           }).then(function () {
             console.log("New user added to firestore");
-            window.location.assign("editprofile.html"); //re-direct to main.html after signup
+            window.location.assign("editprofile.html"); //re-direct to editprofile.html after signup to update users profile.
           })
           .catch(function (error) {
             console.log("Error adding new user: " + error);
